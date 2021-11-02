@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import Todo from './todo';
+import AddTodo from './addTodo';
 import './App.css';
 
 
@@ -17,43 +18,53 @@ export class App extends Component {
     todos:[
       {
         id: 1,
-        taskName: "Pray fozor solat at 5:20PM",
-        taskTag: "Call every family member"
+        taskName: "Pray fajr prayer at mosque (5:20AM)"
       },
 
       {
         id: 2,
-        taskName: "Recite Quran 1 page at 6:00PM",
-        taskTag: "Read loudly"
+        taskName: "Recite Quran at least one page (5:45AM)"
       },
 
       {
         id: 3,
-        taskName: "Take breakfast with family",
-        taskTag: "Dont too much"
+        taskName: "Take breakfast"
       }
     ]
   };
 
 
   // delete/increment item method 
-  deleteHandler = (todo) => {
+  deleteTodo = id => {
     // if(this.fish === undefined) {return} //catcher to handle error
-    const todoList = this.state.todos.filter(t => t.id !== todo);
-    this.setState({ todoList });
-    console.log(todo);
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id
+    });
+
+    this.setState({ todos });
     
   };
+
+
+  // AddTodo function to add task to the state prop array - todos
+
+  addTodo = todo => {
+    todo.id = Math.random();
+    let todos = [...this.state.todos, todo];
+    this.setState({todos});
+  }
   
   render() { 
     return (
       <div className="App container">
         <div className="row">
-          <div className="col-6 offset-3 text-center">
-              <h1 className="app-title mt-5 mb-5"> Todox - <span className="text-primary"> speed up your task </span></h1>
+          <div className="col-6 offset-3">
+              <h1 className="app-title mt-5 mb-5 text-white"> Todox - <span className="text-primary"> speed up your task </span></h1>
               <Todo 
               todos={this.state.todos}
-              onDelete={this.deleteHandler}/>
+              onDelete={this.deleteTodo}/>
+
+              <AddTodo addTodo={this.addTodo}/>
           </div>
         </div>
         

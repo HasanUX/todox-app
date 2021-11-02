@@ -1,4 +1,4 @@
-.App {
+body {
   background-color: rgb(58, 58, 60);
   background: radial-gradient(
     circle,
@@ -8,4 +8,13 @@
     rgba(23, 23, 23, 1) 86%,
     rgba(23, 23, 23, 1) 100%
   );
+}
+
+footer .col-12 a {
+  text-decoration: none;
+  color: #555;
+}
+
+footer .col-12 a:hover {
+  text-decoration: none;
 }

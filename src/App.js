@@ -34,6 +34,16 @@ export class App extends Component {
       }
     ]
   };
+
+
+  // delete/increment item method 
+  deleteHandler = (todo) => {
+    // if(this.fish === undefined) {return} //catcher to handle error
+    const todoList = this.state.todos.filter(t => t.id !== todo);
+    this.setState({ todoList });
+    console.log(todo);
+    
+  };
   
   render() { 
     return (
@@ -41,7 +51,9 @@ export class App extends Component {
         <div className="row">
           <div className="col-6 offset-3 text-center">
               <h1 className="app-title mt-5 mb-5"> Todox - <span className="text-primary"> speed up your task </span></h1>
-              <Todo todos={this.state.todos}/>
+              <Todo 
+              todos={this.state.todos}
+              onDelete={this.deleteHandler}/>
           </div>
         </div>
         

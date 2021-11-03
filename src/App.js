@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Todo from './todo';
 import AddTodo from './addTodo';
-import './App.css';
+import './index.css';
 
 
 //create class comp

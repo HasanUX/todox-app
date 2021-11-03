@@ -4,13 +4,17 @@ import Todo from './todo';
 import AddTodo from './addTodo';
 import './index.css';
 
-
+//alog ->
 //create class comp
 //declare state in a array within a property
 //create todo.js comp 
 //add <Todo /> in parent comp - app.js
 //add props
 //declare props in todo.js
+
+
+
+
 
 export class App extends Component {
 
@@ -37,12 +41,17 @@ export class App extends Component {
   // delete/increment item method 
   deleteTodo = id => {
     // if(this.fish === undefined) {return} //catcher to handle error
-    const todos = this.state.todos.filter(todo => {
-      return todo.id !== id
-    });
+    const todos = this.state.todos.filter(todo => todo.id !== id);
 
     this.setState({ todos });
     
+  };
+
+  //delete all objects of array method
+  deleteAllTodo = () => {
+    // eslint-disable-next-line no-unused-vars
+    const {todos} =  this.state.todos;
+    this.setState({ todos: []});
   };
 
 
@@ -57,13 +66,14 @@ export class App extends Component {
   render() { 
     return (
       <div className="App container">
-        <div className="row">
-          <div className="col-6 offset-3">
-              <h1 className="app-title mt-5 mb-5 text-white"> Todox - <span className="text-primary"> speed up your task </span></h1>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-6">
+              <h1 className="app-title mt-5 mb-5 text-white"> Todox - <span className="text-primary"> track your task <span className="text-secondary"> v.1 </span> </span></h1>
               <Todo 
               todos={this.state.todos}
-              onDelete={this.deleteTodo}/>
-
+              onDelete={this.deleteTodo}
+              onDeleteAll={this.deleteAllTodo}/>
+      
               <AddTodo addTodo={this.addTodo}/>
           </div>
         </div>

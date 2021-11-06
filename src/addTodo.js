@@ -8,21 +8,7 @@ class AddTodo extends Component {
         taskName: '',
         saveTodo: false
     };
-    
 
-    //  //react life cycle
-    //  shouldComponentUpdate(nextProps){
-
-    //     const {addTodo: currentAddtodo} = this.props;
-    //     const {addTodo: nextAddtodo} = nextProps;
-
-    //     if(currentAddtodo === nextAddtodo){
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    //  }
-     
 
     handleChange = e => {
         this.setState({taskName: e.target.value});
@@ -46,7 +32,7 @@ class AddTodo extends Component {
             
             <form className="addtodo-form shadow rounded p-3 mt-5 mb-5" onSubmit={this.handleSubmit}>
                 <div>
-                    <label className="col-form-label">Add your task here (just type here and leave to save)  </label>
+                    <label className="col-form-label">Add your task here </label>
                     <input onChange={this.handleChange} value={this.state.taskName} placeholder="Task name" type="text" className="border form-control" />
                 </div>
                

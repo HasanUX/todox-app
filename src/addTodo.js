@@ -4,55 +4,44 @@ import './index.css';
 
 class AddTodo extends Component {
 
-    todoData;
+    state={
+        taskName: '',
+        saveTodo: false
+    };
+    
 
-    constructor(props){
-        super(props);
+    //  //react life cycle
+    //  shouldComponentUpdate(nextProps){
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        
+    //     const {addTodo: currentAddtodo} = this.props;
+    //     const {addTodo: nextAddtodo} = nextProps;
 
-        this.state={
-            taskName: ''
-        };
-    }
-
+    //     if(currentAddtodo === nextAddtodo){
+    //         return false;
+    //     } else {
+    //         return true;
+    //     }
+    //  }
+     
 
     handleChange = e => {
-        this.setState({taskName: e.target.value})
+        this.setState({taskName: e.target.value});
     }
     
     handleSubmit = e => {
+        // const{ taskName, saveTodo } = this.state;
+        // localStorage.setItem('saveTodo', saveTodo);
+        // localStorage.setItem('taskName', saveTodo ? taskName: '');
         e.preventDefault();
         this.props.addTodo(this.state);
         this.setState({taskName: ''});
     }
 
-    //react life cycle
-    componentDidMount(){
-        this.todoData = JSON.parse(localStorage.getItem('todos'));
-
-        if(localStorage.getItem('todos')){
-            this.setState({
-                taskName: this.todoData.taskName
-            })
-        } else {
-            this.setState({
-                taskName: ''
-            })
-        }
-    }
-
-    componentWillUpdate(nextProps, nextState){
-        localStorage.setItem("todos", JSON.stringify(nextState));
-    }
-
-    
-
 
     render() { 
         
+        console.log("AddTodo rendered");
+
         return (
             
             <form className="addtodo-form shadow rounded p-3 mt-5 mb-5" onSubmit={this.handleSubmit}>
@@ -63,6 +52,7 @@ class AddTodo extends Component {
                
                 <div className="col-12 mt-3">
                      <button type="submit" className="btn btn-dark mb-3">Add Now</button>
+                    
                 </div>
 
                 

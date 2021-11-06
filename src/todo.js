@@ -1,14 +1,16 @@
 import React from 'react';
 
 
-const Todo = ({todos, onDelete, onDeleteAll}) => {
+const Todo = ({todos, onDelete}) => {
+    
+    console.log("Todo rendered");
 
     const todoxList = todos.length ? (
         todos.map(todo => {
             return(
 
-                <div>
-                    <div className="list-group-item list-group-item-action d-flex gap-3 py-3"  key={todo.id}>
+                <div key={todo.id}>
+                    <div className="list-group-item list-group-item-action d-flex gap-3 py-3">
                         <div className="d-flex gap-2 w-100 justify-content-between">
                             <div>
                                 <h6 className="text-dark mb-0">{todo.taskName}</h6>
@@ -37,13 +39,6 @@ const Todo = ({todos, onDelete, onDeleteAll}) => {
     return ( 
         <div className="task-list-group list-group">
             {todoxList}
-
-            <div className="d-flex justify-content-center">
-                {<button className="btn btn-sm btn-warning mt-3"
-                    onClick={onDeleteAll}> 
-                    Delete All  
-                </button>}
-            </div>
         </div>
      );
 }

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/todox-app/static/css/main.79aa15e5.chunk.css",
-    "main.js": "/todox-app/static/js/main.6a962b76.chunk.js",
-    "main.js.map": "/todox-app/static/js/main.6a962b76.chunk.js.map",
+    "main.js": "/todox-app/static/js/main.f29c16f9.chunk.js",
+    "main.js.map": "/todox-app/static/js/main.f29c16f9.chunk.js.map",
     "runtime-main.js": "/todox-app/static/js/runtime-main.6055a862.js",
     "runtime-main.js.map": "/todox-app/static/js/runtime-main.6055a862.js.map",
     "static/css/2.8c0e6b67.chunk.css": "/todox-app/static/css/2.8c0e6b67.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.8c0e6b67.chunk.css",
     "static/js/2.35bdcb6a.chunk.js",
     "static/css/main.79aa15e5.chunk.css",
-    "static/js/main.6a962b76.chunk.js"
+    "static/js/main.f29c16f9.chunk.js"
   ]
 }

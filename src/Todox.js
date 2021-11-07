@@ -1,5 +1,6 @@
 import React from 'react';
 import Todo from './Todo';
+import Done from './Done';
 import AddTodo from './AddTodo';
 import DeleteAll from './DeleteAll';
 
@@ -10,17 +11,20 @@ class Todox extends React.Component {
         todos:[
           {
             id: 1,
-            taskName: "Pray fajr prayer at mosque (5:20AM)"
+            taskName: "Pray fajr prayer at mosque (5:20AM)",
+            done: true
           },
     
           {
             id: 2,
-            taskName: "Recite Quran at least one page (5:45AM)"
+            taskName: "Recite Quran at least one page (5:45AM)",
+            done: ""
           },
     
           {
             id: 3,
-            taskName: "Take breakfast"
+            taskName: "Take breakfast",
+            done: ""
           }
         ]
       };
@@ -50,6 +54,17 @@ class Todox extends React.Component {
         let todos = [...this.state.todos, todo];
         this.setState({todos});
       }
+
+
+      // task-done func - toggle checkbox
+      handleDone = todo => {
+        const todos = [...this.state.todos];
+        const index = todos.indexOf(todo);
+        todos[index] = {...todos[index]};
+        todos[index].done = !todos[index].done;
+        this.setState({ todos });
+      }
+
       
 
     render() { 
@@ -65,10 +80,12 @@ class Todox extends React.Component {
                         <Todo 
                         todos={todos}
                         onDelete={this.deleteTodo}
+                        handleDone={this.handleDone}
                         />
 
                         {todos.length > 0 && 
-                        <DeleteAll onDeleteAll={this.deleteAllTodo} todos={todos}/>}
+                        <DeleteAll onDeleteAll={this.deleteAllTodo} todos={todos}/>
+                        }
                 
                         <AddTodo addTodo={this.addTodo}/>
                 </div>

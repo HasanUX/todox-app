@@ -1,6 +1,5 @@
 import React from 'react';
 import Todo from './Todo';
-import Done from './Done';
 import AddTodo from './AddTodo';
 import DeleteAll from './DeleteAll';
 

@@ -23,7 +23,7 @@ const Todo = ({todos, onDelete, handleDone}) => {
                         
                             {<button className="btn btn-sm btn-danger"
                                 onClick={() => onDelete(todo.id)}> 
-                                X    
+                                <i className="fa fa-trash"></i>   
                             </button>}
                         </div>  
                     

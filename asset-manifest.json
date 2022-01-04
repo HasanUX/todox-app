@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/todox-app/static/css/main.79aa15e5.chunk.css",
-    "main.js": "/todox-app/static/js/main.e007f1e2.chunk.js",
-    "main.js.map": "/todox-app/static/js/main.e007f1e2.chunk.js.map",
+    "main.css": "/todox-app/static/css/main.c3bed1a3.chunk.css",
+    "main.js": "/todox-app/static/js/main.c01d72f4.chunk.js",
+    "main.js.map": "/todox-app/static/js/main.c01d72f4.chunk.js.map",
     "runtime-main.js": "/todox-app/static/js/runtime-main.6055a862.js",
     "runtime-main.js.map": "/todox-app/static/js/runtime-main.6055a862.js.map",
     "static/css/2.55ed049f.chunk.css": "/todox-app/static/css/2.55ed049f.chunk.css",
-    "static/js/2.fa3c99a8.chunk.js": "/todox-app/static/js/2.fa3c99a8.chunk.js",
-    "static/js/2.fa3c99a8.chunk.js.map": "/todox-app/static/js/2.fa3c99a8.chunk.js.map",
+    "static/js/2.f2b1830e.chunk.js": "/todox-app/static/js/2.f2b1830e.chunk.js",
+    "static/js/2.f2b1830e.chunk.js.map": "/todox-app/static/js/2.f2b1830e.chunk.js.map",
     "index.html": "/todox-app/index.html",
     "static/css/2.55ed049f.chunk.css.map": "/todox-app/static/css/2.55ed049f.chunk.css.map",
-    "static/css/main.79aa15e5.chunk.css.map": "/todox-app/static/css/main.79aa15e5.chunk.css.map",
-    "static/js/2.fa3c99a8.chunk.js.LICENSE.txt": "/todox-app/static/js/2.fa3c99a8.chunk.js.LICENSE.txt",
+    "static/css/main.c3bed1a3.chunk.css.map": "/todox-app/static/css/main.c3bed1a3.chunk.css.map",
+    "static/js/2.f2b1830e.chunk.js.LICENSE.txt": "/todox-app/static/js/2.f2b1830e.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/todox-app/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.6055a862.js",
     "static/css/2.55ed049f.chunk.css",
-    "static/js/2.fa3c99a8.chunk.js",
-    "static/css/main.79aa15e5.chunk.css",
-    "static/js/main.e007f1e2.chunk.js"
+    "static/js/2.f2b1830e.chunk.js",
+    "static/css/main.c3bed1a3.chunk.css",
+    "static/js/main.c01d72f4.chunk.js"
   ]
 }

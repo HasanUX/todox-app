@@ -2,12 +2,16 @@ body {
   background-color: rgb(58, 58, 60);
   background: radial-gradient(
     circle,
-    rgba(58, 58, 60, 1) 0%,
-    rgba(23, 23, 23, 1) 60%,
-    rgba(23, 23, 23, 1) 71%,
-    rgba(23, 23, 23, 1) 86%,
-    rgba(23, 23, 23, 1) 100%
+    rgb(255 255 255) 0%,
+    rgb(219 219 219) 60%,
+    rgb(255 255 255) 71%,
+    rgb(255, 255, 255) 86%,
+    rgb(255, 255, 255) 100%
   );
+}
+
+.text-watch {
+  font-size: 14px;
 }
 
 .addtodo-form {
@@ -25,6 +29,15 @@ body {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/rip.svg) bottom
     center;
   background-size: 160%;
+}
+
+.addtodo-form.invalid input {
+  background-color: rgb(255, 180, 180);
+  color: #555;
+}
+
+.addtodo-form.invalid label {
+  color: red;
 }
 
 footer .col-12 a {

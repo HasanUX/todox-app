@@ -1,75 +1,75 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Component } from 'react';
-import './index.css';
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "./contexts/ThemeContext";
+import "./index.css";
 
+const AddTodo = ({ addTodo }) => {
+  // state = {
+  //   taskName: "",
+  //   saveTodo: false,
+  //   isValid: true,
+  // };
 
-class AddTodo extends Component {
+  const [taskName, setTaskName] = useState("");
+  const [isValid, setIsValid] = useState(true);
 
-    state={
-        taskName: '',
-        saveTodo: false
-    };
-
-
-    handleChange = e => {
-        this.setState({taskName: e.target.value});
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (taskName.length === 0) {
+      setIsValid(false);
+      return;
     }
-    
-    handleSubmit = e => {
-        // const{ taskName, saveTodo } = this.state;
-        // localStorage.setItem('saveTodo', saveTodo);
-        // localStorage.setItem('taskName', saveTodo ? taskName: '');
-        e.preventDefault();
-        this.props.addTodo(this.state);
-        this.setState({taskName: ''});
+    addTodo(taskName);
+    setTaskName("");
+  };
+
+  const handleChange = (e) => {
+    if (taskName.length > 0) {
+      setIsValid(true);
     }
+    setTaskName(e.target.value);
+  };
 
+  // useEffect(() => {
+  //   localStorage.setItem("taskName", JSON.stringify(taskName));
+  // }, [taskName]);
 
-    render() { 
-        
-        console.log("AddTodo rendered");
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
+  const theme = isLightTheme ? light : dark;
 
-        return (
+  return (
+    <form
+      className={`addtodo-form shadow rounded p-3 mt-5 mb-5 ${
+        !isValid ? "invalid" : " "
+      }`}
+      onSubmit={handleSubmit}
+    >
+      <div>
+        <label className="col-form-label" style={{ color: theme.primary }}>
+          {isValid ? "Add your task here" : "Please add at least one task!"}
+        </label>
 
-           
-            <form className="addtodo-form shadow rounded p-3 mt-5 mb-5" onSubmit={this.handleSubmit}>
-                <div>
-                    <label className="col-form-label">Add your task here </label>
-                    <input onChange={this.handleChange} value={this.state.taskName} placeholder="Task name" type="text" className="border form-control" />
-                </div>
-            
-                <div className="mt-3">
-                    <button type="submit" className="btn btn-dark mb-3">Add Now</button>
-                    
-                </div>
-            </form>
-          
-            // <nav className="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
-            //     <a className="navbar-brand">Add your task right from here <i className="fa fa-angle-double-right"></i></a>
-        
-            //     <div className="navbar-collapse">
-            //         <ul className="navbar-nav mr-auto">
-                    
-            //             <li className="nav-item">
-            //                 <form className="addtodo-form shadow rounded p-3 mt-5 mb-5" onSubmit={this.handleSubmit}>
-            //                     <div>
-            //                         <label className="col-form-label">Add your task here </label>
-            //                         <input onChange={this.handleChange} value={this.state.taskName} placeholder="Task name" type="text" className="border form-control" />
-            //                     </div>
-                            
-            //                     <div className="mt-3">
-            //                         <button type="submit" className="btn btn-dark mb-3">Add Now</button>
-                                    
-            //                     </div>
-            //                 </form>
-            //             </li>
-                    
-            //         </ul>
-            //     </div>
-            // </nav>
-            
-        );
-    }
-}
- 
+        <input
+          onChange={handleChange}
+          value={taskName}
+          required
+          placeholder="Task name"
+          type="text"
+          className="border form-control"
+        />
+      </div>
+
+      <div className="mt-3">
+        <button
+          type="submit"
+          className="btn mb-3"
+          style={{ background: theme.ui, color: theme.syntax }}
+        >
+          Add Now
+        </button>
+      </div>
+    </form>
+  );
+};
+
 export default AddTodo;

@@ -54,7 +54,7 @@ const Todox = () => {
 
   //delete all objects of array method
   const deleteAllTodo = () => {
-    setTodos({ todos: [] });
+    setTodos({ todos: [...todos] });
   };
 
   // AddTodo function to add task to the state prop array - todos
@@ -142,9 +142,9 @@ const Todox = () => {
             handleDone={handleDone}
           />
 
-          {/* {todos.length > 0 && (
+          {todos.length > 0 && (
             <DeleteAll onDeleteAll={deleteAllTodo} todos={todos} />
-          )} */}
+          )}
 
           <AddTodo addTodo={addTodo} />
           <Footer />
